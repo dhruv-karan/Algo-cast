@@ -3,8 +3,20 @@
 import sys
 
 def lcs2(a, b):
-    #write your code here
-    return min(len(a), len(b))
+    a = 'huv'
+    b= 'huvw'
+    lena = len(a)
+    lenb = len(b)
+    matrix = [[0]*(lena+1) for i in range(lenb+1)]
+    
+    for k in range(1,lena+1):
+        for l in range(1,lenb+1):
+            if a[k-1] == b[l-1]:
+                matrix[k][l] = matrix[k-1][l-1] + 1
+            else:
+                matrix[k][l] = max(matrix[k][l-1],matrix[k-1][l])
+    return matrix[lena][lenb]
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()
