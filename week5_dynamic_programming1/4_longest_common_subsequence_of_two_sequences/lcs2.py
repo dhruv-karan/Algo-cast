@@ -3,11 +3,9 @@
 import sys
 
 def lcs2(a, b):
-    a = 'huv'
-    b= 'huvw'
     lena = len(a)
     lenb = len(b)
-    matrix = [[0]*(lena+1) for i in range(lenb+1)]
+    matrix = [[0]*(lenb+1) for i in range(lena+1)]
     
     for k in range(1,lena+1):
         for l in range(1,lenb+1):
