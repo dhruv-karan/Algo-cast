@@ -39,9 +39,22 @@ def inorder(root):
         inorder(root.left)
         print(root.key)
         inorder(root.right)
+        
+def preorder(root):
+    if root:
+        print(root.key)
+        preorder(root.left)
+        preorder(root.right)
+
+            
+def postorder(root):
+    if root:
+        postorder(root.right)
+        print(root.key)
+        postorder(root.left)
 
 r = Node(50) 
-insert_node(r,Node(30)) 
+insert_node(r,Node(10))
 insert_node(r,Node(20)) 
 insert_node(r,Node(40)) 
 insert_node(r,Node(70)) 
@@ -50,5 +63,7 @@ insert_node(r,Node(80))
 
 
 inorder(r)
+preorder(r)
+postorder(r)
 
 
